@@ -1,0 +1,28 @@
+name: Sample Workflow with Email Step
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: 23f2004203@ds.study.iitm.ac.in
+        run: echo "Hello, world! This step contains the required email address."
+        
+      - name: Run additional commands
+        run: |
+          echo "Current date: $(date)"
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref_name }}"
+          
+      - name: List files
+        run: ls -la
