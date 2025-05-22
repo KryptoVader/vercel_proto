@@ -1,9 +1,11 @@
 {
-  "functions": {
-    "api/marks.py": {
-      "runtime": "@vercel/python@3.1.7"
+  "builds" : [
+    {
+        "src": "api/marks.py",
+        "use": "@vercel/python",
+        "config": { "runtime": "python3.12" }
     }
-  },
+  ],
   "routes": [
     {
       "src": "/api",
